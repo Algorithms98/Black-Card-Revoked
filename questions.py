@@ -2,7 +2,7 @@ class Questions:
     
     def __init__(self):
         
-        quiz = {
+        self.quiz = {
             1 : {
                 "question" : "After you stop and drop, what should you do next?",
                 "answers" : ["shut 'em down, open up shop", "put your hands up", "roll", "hand over your liscense and registration"],
