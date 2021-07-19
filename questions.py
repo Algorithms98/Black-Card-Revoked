@@ -42,7 +42,7 @@ class Questions:
             8 : {
                 "question" : "In what city was MLK Jr Killed?",
                 "answers" : ["atlanta, ga", "washington dc", "birmingham, al" "memphis, tn"],
-                "answer" "memphis, tn":
+                "answer" : "memphis, tn"
             },
             9 : {
                 "question" : "Who is Steve Urkel's cool alter ego?",
@@ -55,3 +55,10 @@ class Questions:
                 "answer" : "mcdonald's money"
             }
         }
+        
+        
+        def getQuestions():
+            
+            for question in self.quiz:
+                return(self.quiz[question]['question'])
+        
