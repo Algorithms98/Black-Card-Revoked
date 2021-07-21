@@ -57,8 +57,12 @@ class Questions:
         }
         
         
-        def getQuestions():
+        def getQuestions(self):
             
             for question in self.quiz:
                 return(self.quiz[question]['question'])
+            
+        
+        def addQuestions(self):
+            
         
