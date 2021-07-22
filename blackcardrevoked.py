@@ -11,24 +11,8 @@ class BlackCardRevoked:
 
 
 
-	#takes user input
-	def takeInput(self):
-
-
-	#adds or deducts points after each question or round
-	def scorePoints(self):
-
-	#who is replying now and next
-	def repliesFirst(self):
-
-	#checks to see which player has the most points at the end of the game
-	def checkWinner(self):
-
-	#This function will check the user’s input to see if it is a correct answer
-	def isCorrect(self):
-
 	#this function initializes the game, lays out the rules for the game as well as serving as the main loop of the game.
-	def playGame(self):
+	def takeInput(self):
 		print("Welcome to BlackCardRevoked")
 		print("How many people are playing today?")
 		numPlayers = input()
@@ -48,6 +32,23 @@ class BlackCardRevoked:
 			self.players.append(name)
 			self.points[name] = 0
 			namecount++
+
+	#adds or deducts points after each question or round
+	def scorePoints(self):
+
+	#who is replying now and next
+	def repliesFirst(self):
+
+	#checks to see which player has the most points at the end of the game
+	def checkWinner(self):
+
+	#This function will check the user’s input to see if it is a correct answer
+	def isCorrect(self):
+
+	#takes user input
+	def playGame(self):
+		print("Welcome to BlackCardRevoked")
+		self.takeInput()
 
 
 
