@@ -6,12 +6,11 @@ class Questions:
 
 	def getCards(self):
 
-		self.cards = {
+		cards = {
             1 : {
                 "question" : "After you stop and drop, what should you do next?",
                 "answers" : ["shut 'em down, open up shop", "put your hands up", "roll", "hand over your liscense and registration"],
-                "answer" : "shut 'em down, open up shop"
-                
+                "answer" : "shut 'em down, open up shop"         
             },
             2 : {
                 "question" : "If Young Metro don't trust you, what might Future do?" ,
@@ -46,7 +45,7 @@ class Questions:
             8 : {
                 "question" : "In what city was MLK Jr Killed?",
                 "answers" : ["atlanta, ga", "washington dc", "birmingham, al" "memphis, tn"],
-                "answer" "memphis, tn":
+                "answer" : "memphis, tn"
             },
             9 : {
                 "question" : "Who is Steve Urkel's cool alter ego?",
@@ -60,6 +59,6 @@ class Questions:
             }
         }
 
-        return self.cards
+        return cards
 
         
