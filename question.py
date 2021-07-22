@@ -1,16 +1,13 @@
 class Questions:
-
-	def __init__(self):
-
-		self.quiz = {}
-
-	def getCards(self):
-
-		cards = {
+    
+    def __init__(self):
+        
+        self.quiz = {
             1 : {
                 "question" : "After you stop and drop, what should you do next?",
                 "answers" : ["shut 'em down, open up shop", "put your hands up", "roll", "hand over your liscense and registration"],
-                "answer" : "shut 'em down, open up shop"         
+                "answer" : "shut 'em down, open up shop"
+                
             },
             2 : {
                 "question" : "If Young Metro don't trust you, what might Future do?" ,
@@ -58,7 +55,22 @@ class Questions:
                 "answer" : "mcdonald's money"
             }
         }
-
-        return cards
-
         
+        
+    def getQuestions(self):
+            
+        for question in self.quiz:
+            return(self.quiz[question]['question'])
+        
+    def getAnswers(self):
+        for question in self.quiz:
+            return(self.quiz[question]['answers'])
+            
+        
+    def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
+
+        self.quiz.update(11 : {"question": "blah", "answers": ['blah', 'blah', 'blah', 'blah'], "answer" : "blah"})
+        print(self.quiz)
+
+test = Questions()
+test.addQuestions(1,2,3)
