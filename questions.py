@@ -57,16 +57,20 @@ class Questions:
         }
         
         
-        def getQuestions(self):
+    def getQuestions(self):
             
-            for question in self.quiz:
-                return(self.quiz[question]['question'])
+        for question in self.quiz:
+            return(self.quiz[question]['question'])
         
-        def getAnswers(self):
-            for question in self.quiz:
-                return(self.quiz[question]['answers'])
-            
-        
-        def addQuestions(self):
+    def getAnswers(self):
+        for question in self.quiz:
+            return(self.quiz[question]['answers'])
             
         
+    def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
+
+        self.quiz.update(11 : {"question": "blah", "answers": ['blah', 'blah', 'blah', 'blah'], "answer" : "blah"})
+        print(self.quiz)
+
+test = Questions()
+test.addQuestions(1,2,3)
