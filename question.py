@@ -1,8 +1,12 @@
 class Questions:
-    
-    def __init__(self):
-        
-        self.quiz = {
+
+	def __init__(self):
+
+		self.quiz = {}
+
+	def getCards(self):
+
+		self.cards = {
             1 : {
                 "question" : "After you stop and drop, what should you do next?",
                 "answers" : ["shut 'em down, open up shop", "put your hands up", "roll", "hand over your liscense and registration"],
@@ -55,3 +59,7 @@ class Questions:
                 "answer" : "mcdonald's money"
             }
         }
+
+        return self.cards
+
+        
