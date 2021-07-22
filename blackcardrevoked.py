@@ -1,4 +1,4 @@
-from Black-Card-Revoked import question.py
+from question import *
 
 class BlackCardRevoked:
 
@@ -31,19 +31,23 @@ class BlackCardRevoked:
 			name = input()
 			self.players.append(name)
 			self.points[name] = 0
-			namecount++
+			namecount += 1
 
 	#adds or deducts points after each question or round
 	def scorePoints(self):
+		return 0
 
 	#who is replying now and next
 	def repliesFirst(self):
+		return 0
 
 	#checks to see which player has the most points at the end of the game
 	def checkWinner(self):
+		return 0
 
 	#This function will check the user’s input to see if it is a correct answer
 	def isCorrect(self):
+		return True
 
 	#takes user input
 	def playGame(self):

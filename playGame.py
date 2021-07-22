@@ -1,4 +1,4 @@
-from Black-Card-Revoked import *
+from blackcardrevoked import *
 
 def main():
 
