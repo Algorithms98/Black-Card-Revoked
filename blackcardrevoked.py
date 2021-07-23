@@ -6,8 +6,9 @@ class BlackCardRevoked:
 
 		self.players = []
 		self.points = {} 	#key = player_name, value = player_points
-		self.answer = " "
-		self.quiz = Questions()
+		self.answer = {}	#key = player_name , value = answer
+		self.cards = Questions()
+		self.questionNum = 1 #question number being asked
 
 
 
@@ -31,11 +32,18 @@ class BlackCardRevoked:
 			name = input()
 			self.players.append(name)
 			self.points[name] = 0
+			self.answer[name] = ""
 			namecount += 1
 
 	#adds or deducts points after each question or round
 	def scorePoints(self):
-		return 0
+
+		for i in range(len(self.players)):
+			if isCorrect( answer[self.players[i]] ) == True:
+				self.points[self.players[i]] += 1 #award a point for correct answer
+			else:
+				self.points[self.players[i]] += 0 #give zero points for each wrong answer 
+		
 
 	#who is replying now and next
 	def repliesFirst(self):
@@ -46,12 +54,18 @@ class BlackCardRevoked:
 		return 0
 
 	#This function will check the user’s input to see if it is a correct answer
-	def isCorrect(self):
-		return True
+	def isCorrect(self, answer):
+
+		correct = False
+		if answer == self.card.getAnswer(questionNum):
+			correct = True
+		else:
+			correct = False
+		return correct
 
 	#takes user input
 	def playGame(self):
-		print("Welcome to BlackCardRevoked")
+		print("Welcome to Black Card Revoked")
 		self.takeInput()
 
 
