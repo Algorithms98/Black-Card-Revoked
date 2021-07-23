@@ -65,7 +65,11 @@ class Questions:
     def getAnswers(self):
         for question in self.quiz:
             return(self.quiz[question]['answers'])
-            
+
+    def getAnswer(self, question):
+        return self.quiz[question]['answer']
+
+         
         
     def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
 
