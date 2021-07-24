@@ -15,7 +15,6 @@ class BlackCardRevoked:
 
 	#this function initializes the game, lays out the rules for the game as well as serving as the main loop of the game.
 	def takeInput(self):
-		#print("Welcome to BlackCardRevoked")
 		print("How many people are playing today?")
 		numPlayers = input()
 		isValid == numPlayers.isnumeric()
@@ -61,7 +60,7 @@ class BlackCardRevoked:
 	def isCorrect(self, answer):
 
 		correct = False
-		if answer == self.card.getAnswer(questionNum):
+		if answer == self.card.getAnswer(self.questionNum):
 			correct = True
 		else:
 			correct = False
@@ -71,10 +70,10 @@ class BlackCardRevoked:
 	def blackCard(self):
 		
 		self.repliesFirst()
-		print("Get ready for the question")
-		print(self.cards.getQuestion(questionNum))
+		print(f"Get ready for question number, {self.questionNum}")
+		print(self.cards.getQuestion(self.questionNum))
 		print("Possible Answers")
-		print(self.cards.getAnswer(questionNum))
+		print(self.cards.getAnswer(self.questionNum))
 		self.questionNum += 1 
 
 		print(f"Player, {self.players[self.goingFirst]} answers first")
@@ -110,4 +109,10 @@ class BlackCardRevoked:
 					print("Winners:", champs)
 					play = False
 					break
+
+				else:
+					champs = self.checkWinner()
+					print("Winners:", champs)
+					play = True
+					self.goingFirst = -1	#Reset to the first player 
 
