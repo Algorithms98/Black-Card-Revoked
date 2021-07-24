@@ -75,7 +75,8 @@ class BlackCardRevoked:
 		print(self.cards.getQuestion(questionNum))
 		print("Possible Answers")
 		print(self.cards.getAnswer(questionNum))
-		questionNum += 1 
+		self.questionNum += 1 
+
 		print(f"Player, {self.players[self.goingFirst]} answers first")
 		self.answer[self.players[self.goingFirst]] = input()
 		for i in range(self.goingFirst+1, len(self.players)):
@@ -104,27 +105,9 @@ class BlackCardRevoked:
 				print("Do you want to continue playing Y/N ?")
 				decision = input()
 
-				if decision != 'Y':
+				if decision.upper() != 'Y':
+					champs = self.checkWinner()
+					print("Winners:", champs)
 					play = False
 					break
-
-
-
-
-
-		
-
-		
-		
-
-
-
-			
-
-
-
-
-
-
-
 
