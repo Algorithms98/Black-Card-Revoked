@@ -9,12 +9,13 @@ class BlackCardRevoked:
 		self.answer = {}	#key = player_name , value = answer
 		self.cards = Questions()
 		self.questionNum = 1 #question number being asked
+		self.goingFirst = -1 #who's turn it is to play first 
 
 
 
 	#this function initializes the game, lays out the rules for the game as well as serving as the main loop of the game.
 	def takeInput(self):
-		print("Welcome to BlackCardRevoked")
+		#print("Welcome to BlackCardRevoked")
 		print("How many people are playing today?")
 		numPlayers = input()
 		isValid == numPlayers.isnumeric()
@@ -47,11 +48,14 @@ class BlackCardRevoked:
 
 	#who is replying now and next
 	def repliesFirst(self):
-		return 0
+		self.goingFirst += 1
+		return self.goingFirst 
 
-	#checks to see which player has the most points at the end of the game
+	#return players with the most points at the end of the game
 	def checkWinner(self):
-		return 0
+		highScore = max(self.points.values())
+		winners = [ w for w,p in self.points.items() if p == highScore]
+		return winners
 
 	#This function will check the user’s input to see if it is a correct answer
 	def isCorrect(self, answer):
@@ -64,9 +68,60 @@ class BlackCardRevoked:
 		return correct
 
 	#takes user input
+	def blackCard(self):
+		
+		self.repliesFirst()
+		print("Get ready for the question")
+		print(self.cards.getQuestion(questionNum))
+		print("Possible Answers")
+		print(self.cards.getAnswer(questionNum))
+		questionNum += 1 
+		print(f"Player, {self.players[self.goingFirst]} answers first")
+		self.answer[self.players[self.goingFirst]] = input()
+		for i in range(self.goingFirst+1, len(self.players)):
+			print(f"Player, {self.players[i]} enter your answer here")
+			self.answer[self.players[i]] = input()
+
+		if self.goingFirst != 0:
+			for i in range(0, self.goingFirst):
+				print(f"Player, {self.players[i]} enter your answer here")
+				self.answer[self.players[i]] = input()
+
+
 	def playGame(self):
 		print("Welcome to Black Card Revoked")
 		self.takeInput()
+
+		play = True
+
+		while play:
+			self.blackCard()
+			self.scorePoints()
+
+			#option to continue playing after all players have gone first
+			if self.goingFirst == len(self.players)-1:
+				print("All playeres have gone first at least once")
+				print("Do you want to continue playing Y/N ?")
+				decision = input()
+
+				if decision != 'Y':
+					play = False
+					break
+
+
+
+
+
+		
+
+		
+		
+
+
+
+			
+
+
 
 
 
