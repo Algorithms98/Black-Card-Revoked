@@ -72,6 +72,9 @@ class Questions:
     def getQuestion(self, num):
         return self.quiz[num]['question']
 
+    def getDeck(self):
+        return self.quiz
+
          
         
     def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
