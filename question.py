@@ -1,7 +1,7 @@
 class Questions:
     
     def __init__(self):
-        
+        self.num = 11
         self.quiz = {
             1 : {
                 "question" : "After you stop and drop, what should you do next?",
@@ -78,9 +78,11 @@ class Questions:
          
         
     def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
-
-        self.quiz.update(11 : {"question": "blah", "answers": ['blah', 'blah', 'blah', 'blah'], "answer" : "blah"})
+        
+        
+        self.quiz.update({self.num : {"question": "blah", "answers": ['blah', 'blah', 'blah', 'blah'], "answer" : "blah"}})
         print(self.quiz)
+        self.num += 1
 
 test = Questions()
 test.addQuestions(1,2,3)
