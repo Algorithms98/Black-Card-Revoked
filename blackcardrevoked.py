@@ -70,6 +70,10 @@ class BlackCardRevoked:
 	def blackCard(self):
 		
 		self.repliesFirst()
+
+		if self.questionNum == len(cards.getDeck()):	#Resets to question 1 after using all the cards
+			self.questionNum = 1
+
 		print(f"Get ready for question number, {self.questionNum}")
 		print(self.cards.getQuestion(self.questionNum))
 		print("Possible Answers")
@@ -115,4 +119,5 @@ class BlackCardRevoked:
 					print("Winners:", champs)
 					play = True
 					self.goingFirst = -1	#Reset to the first player 
+
 
