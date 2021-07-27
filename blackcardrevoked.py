@@ -77,7 +77,7 @@ class BlackCardRevoked:
 		print(f"Get ready for question number, {self.questionNum}")
 		print(self.cards.getQuestion(self.questionNum))
 		print("Possible Answers")
-		print(self.cards.getAnswer(self.questionNum))
+		print(self.cards.getAnswers(self.questionNum))
 		self.questionNum += 1 
 
 		print(f"Player, {self.players[self.goingFirst]} answers first")
@@ -119,5 +119,3 @@ class BlackCardRevoked:
 					print("Winners:", champs)
 					play = True
 					self.goingFirst = -1	#Reset to the first player 
-
-

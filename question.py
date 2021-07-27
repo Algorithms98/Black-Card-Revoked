@@ -62,9 +62,8 @@ class Questions:
         for question in self.quiz:
             return(self.quiz[question]['question'])
         
-    def getAnswers(self):
-        for question in self.quiz:
-            return(self.quiz[question]['answers'])
+    def getAnswers(self, num):
+        return self.quiz[num]['answers']
 
     def getAnswer(self, num):
         return self.quiz[num]['answer']
