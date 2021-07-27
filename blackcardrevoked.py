@@ -8,7 +8,7 @@ class BlackCardRevoked:
 		self.points = {} 	#key = player_name, value = player_points
 		self.answer = {}	#key = player_name , value = answer
 		self.cards = Questions()
-		self.questionNum = 1 #question number being asked
+		self.questionNum = 0 #question number being asked
 		self.goingFirst = -1 #who's turn it is to play first 
 
 
@@ -65,10 +65,11 @@ class BlackCardRevoked:
 				self.points[self.players[i]] += 1 #award a point for correct answer
 			else:
 				self.points[self.players[i]] += 0 #give zero points for each wrong answer 
+				print(f"Player answered: {self.answer[self.players[i]]}. Correct answer is: {self.cards.getAnswer(self.questionNum)}")
 
 	#takes user input
 	def blackCard(self):
-		
+		self.questionNum += 1 
 		self.repliesFirst()
 
 		if self.questionNum == len(self.cards.getDeck()):	#Resets to question 1 after using all the cards
@@ -78,7 +79,7 @@ class BlackCardRevoked:
 		print(self.cards.getQuestion(self.questionNum))
 		print("Possible Answers")
 		print(self.cards.getAnswers(self.questionNum))
-		self.questionNum += 1 
+		
 
 		print(f"Player, {self.players[self.goingFirst]} answers first")
 		self.answer[self.players[self.goingFirst]] = input()
@@ -99,6 +100,8 @@ class BlackCardRevoked:
 		play = True
 
 		while play:
+			print(self.points)
+			print(self.answer)
 			self.blackCard()
 			self.scorePoints()
 
