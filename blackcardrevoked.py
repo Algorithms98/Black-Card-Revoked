@@ -44,7 +44,7 @@ class BlackCardRevoked:
 	#return players with the most points at the end of the game
 	def checkWinner(self):
 		highScore = max(self.points.values())
-		winners = [ w for w,p in self.points.items() if p == highScore]
+		winners = [ [w, p] for w,p in self.points.items() if p == highScore]
 		return winners
 
 	#This function will check the user’s input to see if it is a correct answer
@@ -95,7 +95,7 @@ class BlackCardRevoked:
 	def printWinners(self, winnersArray):
 		print("\nWINNER(S):")
 		for winner in winnersArray:
-			print(winner)
+			print(f"{winner[0]} - {winner[1]} point(s)")
 
 	def playGame(self):
 		print("Welcome to Black Card Revoked\n")
