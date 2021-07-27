@@ -91,7 +91,11 @@ class BlackCardRevoked:
 			for i in range(0, self.goingFirst):
 				print(f"Player, {self.players[i]} enter your answer here")
 				self.answer[self.players[i]] = input()
-
+		
+	def printWinners(self, winnersArray):
+		print("\nWINNER(S):")
+		for winner in winnersArray:
+			print(winner)
 
 	def playGame(self):
 		print("Welcome to Black Card Revoked")
@@ -113,12 +117,12 @@ class BlackCardRevoked:
 
 				if decision.upper() != 'Y':
 					champs = self.checkWinner()
-					print("Winners:", champs)
+					self.printWinners(champs)
 					play = False
 					break
 
 				else:
 					champs = self.checkWinner()
-					print("Winners:", champs)
+					self.printWinners(champs)
 					play = True
 					self.goingFirst = -1	#Reset to the first player 
