@@ -79,8 +79,8 @@ class Questions:
         
     def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
         
-        
-        self.quiz.update({self.num : {"question": "%s" % (q), "answers": ['blah', 'blah', 'blah', 'blah'], "answer" : "%s" % (ra)}})
+        b = ["red", "blue", "orange", "red"]
+        self.quiz.update({self.num : {"question": "%s" % (q), "answers": ["%s", "%s", "%s", "%s"], "answer" : "%s" % (ra)}})
         print(self.quiz)
         self.num += 1
 
