@@ -83,5 +83,5 @@ class Questions:
         print(self.quiz)
         self.num += 1
 
-test = Questions()
-test.addQuestions(1,2,3)
+#test = Questions()
+#test.addQuestions(1,2,3)
