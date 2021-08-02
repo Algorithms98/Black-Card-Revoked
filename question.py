@@ -80,7 +80,7 @@ class Questions:
         
         b = ["red", "blue", "orange", "red"]
         self.quiz.update({self.num : {"question": "%s" % (q), "answers": ["%s" % (b[0]), "%s" % (b[1]), "%s" % (b[2]), "%s" % (b[3])], "answer" : "%s" % (ra)}})
-        print(self.quiz)
+        #print(self.quiz)
         self.num += 1
 
 test = Questions()
