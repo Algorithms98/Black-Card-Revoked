@@ -71,15 +71,15 @@ class BlackCardRevoked:
 	#takes user input
 	def blackCard(self):
 		self.questionNum += 1 
-		self.currentCard = randint(1,self.cards.quiz.length)
+		self.currentCard = randint(1,len(self.cards.quiz))
 		while self.currentCard in self.cardsUsed:
-			self.currentCard = randint(1,self.cards.quiz.length)
+			self.currentCard = randint(1,len(self.cards.quiz))
 		self.cardsUsed.append(self.currentCard)
 		self.repliesFirst()
 
 		if self.questionNum == len(self.cards.getDeck()):	#Resets to question 1 after using all the cards
 			self.questionNum = 1
-			self.currentCard = randint(1,self.cards.quiz.length)
+			self.currentCard = randint(1,len(self.cards.quiz))
 			self.cardsUsed = [self.currentCard]
 
 		print(f"\nGet ready for question number, {self.questionNum}")
