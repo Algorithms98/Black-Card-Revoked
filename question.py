@@ -1,6 +1,9 @@
 class Questions:
     
     def __init__(self):
+        self.q = ""
+        self.a = []
+        self.ra = ""
         self.num = 11
         self.quiz = {
             1 : {
@@ -77,6 +80,8 @@ class Questions:
          
         
     def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
+        
+        print(input("Before, we start, do you want to add any questions?"))
         
         b = ["red", "blue", "orange", "red"]
         self.quiz.update({self.num : {"question": "%s" % (q), "answers": ["%s" % (b[0]), "%s" % (b[1]), "%s" % (b[2]), "%s" % (b[3])], "answer" : "%s" % (ra)}})
