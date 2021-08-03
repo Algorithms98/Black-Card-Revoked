@@ -112,6 +112,7 @@ class BlackCardRevoked:
 		play = True
 
 		while play:
+            self.cards.addQuestions()
 			self.blackCard()
 			self.scorePoints()
 
