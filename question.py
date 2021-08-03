@@ -93,7 +93,7 @@ class Questions:
             print("Please enter in the real answer to your question")
             self.ra = input()
             self.quiz.update({self.num : {"question": "%s" % (self.q), "answers": ["%s" % (self.a[0]), "%s" % (self.a[1]), "%s" % (self.a[2]), "%s" % (self.a[3])], "answer" : "%s" % (self.ra)}})
-            print(self.quiz)
+            #print(self.quiz)
             self.num += 1
         
         else:
