@@ -1,6 +1,9 @@
 class Questions:
     
     def __init__(self):
+        self.q = ""
+        self.a = []
+        self.ra = ""
         self.num = 11
         self.quiz = {
             1 : {
@@ -76,12 +79,26 @@ class Questions:
 
          
         
-    def addQuestions(self, q, a, ra): #q - question, a - answers, ra - real answer
+    def addQuestions(self): #q - question, a - answers, ra - real answer
         
-        b = ["red", "blue", "orange", "red"]
-        self.quiz.update({self.num : {"question": "%s" % (q), "answers": ["%s" % (b[0]), "%s" % (b[1]), "%s" % (b[2]), "%s" % (b[3])], "answer" : "%s" % (ra)}})
-        #print(self.quiz)
-        self.num += 1
+        print("Before, we start, do you want to add a question? Type in Y/N")
+        answer = input().lower()
+        if answer == 'y':
+            print("Please enter in the question you want to add")
+            self.q = input()
+            print("Please enter in the possible answers to your added question")
+            for i in range(0, 4):
+                temp = str(input())
+                self.a.append(temp)
+            print("Please enter in the real answer to your question")
+            self.ra = input()
+            self.quiz.update({self.num : {"question": "%s" % (self.q), "answers": ["%s" % (self.a[0]), "%s" % (self.a[1]), "%s" % (self.a[2]), "%s" % (self.a[3])], "answer" : "%s" % (self.ra)}})
+            print(self.quiz)
+            self.num += 1
+        
+        else:
+            return -1
 
-test = Questions()
-test.addQuestions(1,2,3)
+#test = Questions()
+#test.addQuestions()
+#print("Outside")
