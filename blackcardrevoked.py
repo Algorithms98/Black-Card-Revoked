@@ -113,9 +113,10 @@ class BlackCardRevoked:
         self.takeInput()
 
         play = True
+        self.cards.addQuestions()
 
         while play:
-            self.cards.addQuestions()
+            
             self.blackCard()
             self.scorePoints()
 
