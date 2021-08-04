@@ -18,6 +18,14 @@ class BlackCardRevoked:
     # this function initializes the game, lays out the rules for the game as well as serving as the main loop of the game.
 
     def takeInput(self):
+        print("Instructions")
+        print("- To begin you will enter the total number of players and then each player's name.")
+        print("- Before starting you will have the option of adding your own question or not to the game.")
+        print("- Each player will take turns being the first to answer each question.")
+        print("- To answer a question you type out one of the four possible answers given on your turn.")
+        print("- Once each player has gone first at least once, the players can choose to end or continue the game.")
+        print("- The player(s) with the most points at the end wins.\n")
+
         print("How many people are playing today?")
         numPlayers = input()
         isValid = numPlayers.isnumeric()
